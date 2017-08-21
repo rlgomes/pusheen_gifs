@@ -19,6 +19,9 @@ pusheen emoji's as I'll take almost any reasonable update/change
 
 # uploading to slack
 
-To upload to slack I first resized them using [gifsicle](https://www.lcdf.org/gifsicle/)
-to resize and optimize the gifs and then [slack-emojinator](https://github.com/smashwilson/slack-emojinator)
+To upload to slack I used a script that splits the original gif into its various
+frames where we then make the background transparent and resize to 128x128 for
+slack and stitch things back together into a new "slackable" gif. I used
+[imagemagick](https://www.imagemagick.org/script/index.php) to do the gif
+creation and then and then used [slack-emojinator](https://github.com/smashwilson/slack-emojinator)
 to upload them to slack.
