@@ -17,6 +17,7 @@ do
     do
         BG_COLOR=`convert $PNG -crop '1x1+0+0' txt:- | head -2 | tail -1 | awk '{print $3}'`
         convert $PNG -resize 128x128 -fuzz 3% -transparent $BG_COLOR $PNG
+        convert $PNG -resize 128x128 -trim +repage $PNG
     done
 
     convert $(for a in tmp/*.png; do printf -- "-delay 10 -dispose background %s " $a; done;) $FILE
